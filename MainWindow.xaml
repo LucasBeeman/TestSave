@@ -5,20 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestSave"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="MainWindow_Load">
+        Title="MainWindow" Height="600" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height=".5*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="nameBox" Text="hello"/>
-        <TextBlock x:Name="nameLabel" Text="" Grid.Row="1"/>
-        <Button x:Name="saveButton" Content="Save" Grid.Row="2" Click="saveButton_Click"/>
-
+        <TextBlock Text="PasswordGenerator" HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2" FontSize="20" />
+        <TextBlock Text="Enter Number: " FontSize="20" Grid.Row="1"
+                   VerticalAlignment="Center"/>
+        <TextBox x:Name="numOfChars" Grid.Row="1"
+                 VerticalAlignment="Center" Margin="130, 0, 20 ,0"/>
+        <TextBlock Text="Service Name: " FontSize="20" Grid.Row="1"
+                   Grid.RowSpan="2" VerticalAlignment="Center"
+                   Margin="0, 0, 50, 0"/>
+        <TextBox x:Name="serviceName" Grid.Row="1"
+                 VerticalAlignment="Center" 
+                 Margin="130, 0, 20 ,0" Grid.RowSpan="2"/>
+        <TextBlock Text="User Name:" Grid.Row="2" FontSize="20"
+                   VerticalAlignment="Center"/>
+        <TextBox x:Name="userName" Grid.Row="2" VerticalAlignment="Center"
+                 Margin="130, 0, 20, 0"/>
+        <Button x:Name="GenerateButton" Grid.Row="3" Margin="80, 30, 80, 30"
+                Content="Generate" Click="GenerateButton_Click"/>
+        <CheckBox x:Name="isCapital" Grid.Row="3" Grid.Column="1"
+                  VerticalAlignment="Center" Margin="0, 0, 0, 60"/>
+        <TextBlock Text="Include Capital Letters" Grid.Row="3" Grid.Column="1"
+                   VerticalAlignment="Center" Margin="20,0,0, 60"/>
+        <CheckBox x:Name="isNumeric" Grid.Row="3" Grid.Column="1"
+                  VerticalAlignment="Center" Margin="0, 0, 0, 20"/>
+        <TextBlock Text="Include Numbers" Grid.Row="3" Grid.Column="1"
+                   VerticalAlignment="Center" Margin="20,0,0, 20"/>
+        <CheckBox x:Name="isSpecial" Grid.Row="3" Grid.Column="1"
+                  VerticalAlignment="Center" Margin="0, 0, 0, -20"/>
+        <TextBlock Text="Include Special Characters" Grid.Row="3" Grid.Column="1"
+                   VerticalAlignment="Center" Margin="20,0,0, -20"/>
+        <ListBox x:Name="list" Grid.Row="4" Grid.ColumnSpan="2">
+            
+        </ListBox>
+        
     </Grid>
 </Window>
